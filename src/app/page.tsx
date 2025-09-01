@@ -7,6 +7,7 @@ import HowToBuy2D from '@/components/sections/layouts/howtobuy/2DHTB';
 import PatternTokenomics from '@/components/sections/layouts/tokenomics/PatternTokenomics';
 import CentralFAQ from '@/components/sections/layouts/faq/CentralFAQ';
 import FooterLogoEmphasis from '@/components/footer/FooterLogoEmphasis';
+import { DollarSign, Lock, Cog } from 'lucide-react';
 
 export default function Home() {
   const navbarProps = {
@@ -55,9 +56,9 @@ export default function Home() {
           title="Tokenomics"
           description="Here’s how our tokens work!"
           kpiItems={[
-            { value: "1 Trillion", description: "Total Supply", icon: "DollarSign" },
-            { value: "50%", description: "Liquidity", icon: "Lock" },
-            { value: "10%", description: "Development", icon: "Cog" }
+            { value: "1 Trillion", description: "Total Supply", icon: DollarSign },
+            { value: "50%", description: "Liquidity", icon: Lock },
+            { value: "10%", description: "Development", icon: Cog }
           ]}
         />
       </div>
