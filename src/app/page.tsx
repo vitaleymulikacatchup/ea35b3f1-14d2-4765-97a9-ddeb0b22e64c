@@ -80,7 +80,6 @@ export default function Home() {
             { items: [{ label: "Privacy Policy", onClick: () => alert('Privacy Policy Clicked') }, { label: "Terms of Service", onClick: () => alert('Terms of Service Clicked') }] },
             { items: [{ label: "FAQ", onClick: () => alert('FAQ Clicked') }, { label: "Support", onClick: () => alert('Support Clicked') }] }
           ]}
-          copyrightText="© 2023 MemeCoin. All rights reserved"
           onPrivacyClick={() => alert('Privacy Policy Clicked')}
         />
       </div>
