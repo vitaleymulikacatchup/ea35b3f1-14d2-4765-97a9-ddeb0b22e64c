@@ -53,8 +53,8 @@ export default function Home() {
           title="MemeCoin Tokenomics"
           description="Understanding the economic model behind MemeCoin"
           kpiItems={[
-            { value: "10M", description: "Total Supply", icon: { icon: 'star' } },
-            { value: "5M", description: "Circulating Supply", icon: { icon: 'star' } },
+            { value: "10M", description: "Total Supply", icon: 'star' },
+            { value: "5M", description: "Circulating Supply", icon: 'star' },
           ]}
         />
       </div>
