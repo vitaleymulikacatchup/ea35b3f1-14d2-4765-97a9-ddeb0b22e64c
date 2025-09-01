@@ -1,4 +1,4 @@
-"use client";
+use client
 import { SiteThemeProvider } from '@/components/sections/ThemeProvider';
 import NavbarLayoutSplitBottom from '@/components/navigation/NavbarLayoutSplitBottom/NavbarLayoutSplitBottom';
 import TokenBillboardHero from '@/components/sections/layouts/hero/TokenBillboardHero';
@@ -7,79 +7,81 @@ import HowToBuy2D from '@/components/sections/layouts/howtobuy/2DHTB';
 import PatternTokenomics from '@/components/sections/layouts/tokenomics/PatternTokenomics';
 import CentralFAQ from '@/components/sections/layouts/faq/CentralFAQ';
 import FooterLogoEmphasis from '@/components/footer/FooterLogoEmphasis';
-import { DollarSign, Lock, Cog } from 'lucide-react';
 
 export default function Home() {
-  const navbarProps = {
-    logoSrc: "/images/logo.svg",
-    logoAlt: "MemeCoin logo",
-    logoWidth: 100,
-    logoHeight: 100,
-    navItems: [
-      { name: "Hero", id: "hero" },
-      { name: "About", id: "about" },
-      { name: "How to Buy", id: "how-to-buy" },
-      { name: "Tokenomics", id: "tokenomics" },
-      { name: "FAQ", id: "faq" },
-      { name: "Footer", id: "footer" },
-    ],
-    buttonText: "Buy Meme",
-    onButtonClick: () => alert('Button Clicked')
-  };
-
   return (
     <SiteThemeProvider theme={{ styleVariant: 'funAndTrendy', colorTemplate: 2, textAnimation: 'slide' }}>
-      <NavbarLayoutSplitBottom {...navbarProps} />
-      <div id="hero" data-section="hero" className="scroll-mt-24 bg-gradient-to-b from-[rgba(255,106,106,.25)] to-transparent">
+      <NavbarLayoutSplitBottom
+        logoSrc="/images/logo.svg"
+        logoWidth={160}
+        logoHeight={40}
+        navItems={[
+          { name: 'Home', id: 'hero' },
+          { name: 'About', id: 'about' },
+          { name: 'How to Buy', id: 'how-to-buy' },
+          { name: 'Tokenomics', id: 'tokenomics' },
+          { name: 'FAQ', id: 'faq' },
+          { name: 'Footer', id: 'footer' },
+        ]}
+        className="bg-opacity-80"
+        buttonText="Buy Meme"
+        onButtonClick={() => { /* your logic here */ }}
+      />
+      <div id="hero" data-section="hero" className="scroll-mt-24">
         <TokenBillboardHero
-          title="Join the MemeCoin Revolution!"
-          subtitle="The future of fun transactions"
-          contractAddress="0x1234567890"
+          title="Welcome to MemeCoin"
+          subtitle="Join the fun and start trading today!"
+          contractAddress="0x..."
           copyButtonText="Copy Address"
           copiedText="Address Copied!"
         />
       </div>
-      <div id="about" data-section="about" className="scroll-mt-24 bg-white">
+      <div id="about" data-section="about" className="scroll-mt-24">
         <CtaAbout
           title="What is MemeCoin?"
           descriptions={[
-            "MemeCoin is a cryptocurrency that focuses on fun transactions.",
-            "Join a friendly community and enjoy easy crypto exchanges!"
+            "MemeCoin is the most playful coin in the crypto universe.",
+            "Our mission is to create a community-driven cryptocurrency with a fun twist.",
           ]}
         />
       </div>
-      <div id="how-to-buy" data-section="how-to-buy" className="scroll-mt-24 bg-gray-100">
-        <HowToBuy2D variant="reveal" />
+      <div id="how-to-buy" data-section="how-to-buy" className="scroll-mt-24">
+        <HowToBuy2D variant='reveal' />
       </div>
-      <div id="tokenomics" data-section="tokenomics" className="scroll-mt-24 bg-white">
+      <div id="tokenomics" data-section="tokenomics" className="scroll-mt-24">
         <PatternTokenomics
-          title="Tokenomics"
-          description="Here’s how our tokens work!"
+          title="MemeCoin Tokenomics"
+          description="Understanding the economic model behind MemeCoin"
           kpiItems={[
-            { value: "1 Trillion", description: "Total Supply", icon: DollarSign },
-            { value: "50%", description: "Liquidity", icon: Lock },
-            { value: "10%", description: "Development", icon: Cog }
+            { value: "10M", description: "Total Supply", icon: { icon: 'star' } },
+            { value: "5M", description: "Circulating Supply", icon: { icon: 'star' } },
           ]}
         />
       </div>
-      <div id="faq" data-section="faq" className="scroll-mt-24 bg-gray-50">
-        <CentralFAQ
-          items={[
-            { title: "How to buy?", content: "You can buy MemeCoin through various crypto exchanges." },
-            { title: "What is MemeCoin?", content: "A fun cryptocurrency for various uses." }
-          ]}
-        />
+      <div id="faq" data-section="faq" className="scroll-mt-24">
+        <CentralFAQ items={[
+          { title: 'What is MemeCoin?', content: 'MemeCoin is a fun and community-driven cryptocurrency.' },
+          { title: 'How can I buy MemeCoin?', content: 'You can buy MemeCoin on multiple exchanges.' },
+        ]} />
       </div>
-      <div id="footer" data-section="footer" className="scroll-mt-24 bg-black">
+      <div id="footer" data-section="footer" className="scroll-mt-24">
         <FooterLogoEmphasis
           logoSrc="/images/logo.svg"
-          logoAlt="MemeCoin logo"
+          logoAlt="MemeCoin Logo"
           logoText="MemeCoin"
           columns={[
-            { items: [{ label: "Roadmap", onClick: () => alert('Roadmap Clicked') }, { label: "Contact", onClick: () => alert('Contact Clicked') }] },
-            { items: [{ label: "Privacy Policy", onClick: () => alert('Privacy Policy Clicked') }, { label: "Terms of Service", onClick: () => alert('Terms of Service Clicked') }] },
-            { items: [{ label: "FAQ", onClick: () => alert('FAQ Clicked') }, { label: "Support", onClick: () => alert('Support Clicked') }] }
+            { items: [
+              { label: 'Home', onClick: () => {} },
+              { label: 'About', onClick: () => {} },
+            ] },
+            { items: [
+              { label: 'Tokenomics', onClick: () => {} },
+              { label: 'FAQ', onClick: () => {} },
+            ] },
           ]}
+          copyrightText="© 2023 MemeCoin. All rights reserved."
+          onPrivacyClick={() => {} }
+          className="bg-opacity-50"
         />
       </div>
     </SiteThemeProvider>
